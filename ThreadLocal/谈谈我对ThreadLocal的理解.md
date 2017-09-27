@@ -16,7 +16,7 @@
 > 实现一个线程本地的存储，也就是说，每个线程都有自己的局部变量。所有线程都共享一个ThreadLocal对象，但是每个线程在访问这些变量的时候能得到不同的值，每个线程可以更改这些变量并且不会影响其他的线程，并且支持null值。
 
 我们先来看一下ThreadLocal类中的方法：
-<center>![](1.jpg)
+<center>![](https://github.com/AerialLadder/StudyNotes/blob/master/ThreadLocal/1.jpg)
 
 其中有四个很重要的方法：
 > * public void set(T value)设置当前线程的线程局部变量的值。
