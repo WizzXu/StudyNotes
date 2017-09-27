@@ -16,7 +16,7 @@
 > 实现一个线程本地的存储，也就是说，每个线程都有自己的局部变量。所有线程都共享一个ThreadLocal对象，但是每个线程在访问这些变量的时候能得到不同的值，每个线程可以更改这些变量并且不会影响其他的线程，并且支持null值。
 
 我们先来看一下ThreadLocal类中的方法：
-<center>![](https://github.com/AerialLadder/StudyNotes/blob/master/ThreadLocal/1.jpg?raw=true)
+<center>![](https://github.com/AerialLadder/StudyNotes/blob/master/PIC/2017_9_21_1.jpg?raw=true)
 
 其中有四个很重要的方法：
 > * public void set(T value)设置当前线程的线程局部变量的值。
@@ -230,7 +230,7 @@ public class Test {
 }
 ```
 运行结果为:
-![](https://github.com/AerialLadder/StudyNotes/blob/master/ThreadLocal/2.png?raw=true)  
+![](https://github.com/AerialLadder/StudyNotes/blob/master/PIC/2017_9_21_2.jpg?raw=true)  
 这个方法在主线程如果没有调用test.set()方法会报出一个空指针异常的的错误,经过分析,原因为MAP使用问题,请看我另一篇[MAP分析][MAP分析]
 
 
