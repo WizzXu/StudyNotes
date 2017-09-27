@@ -230,7 +230,7 @@ public class Test {
 }
 ```
 运行结果为:
-![](https://github.com/AerialLadder/StudyNotes/blob/master/PIC/2017_9_21_2.jpg?raw=true)  
+![](https://github.com/AerialLadder/StudyNotes/blob/master/PIC/2017_9_21_2.png?raw=true)  
 这个方法在主线程如果没有调用test.set()方法会报出一个空指针异常的的错误,经过分析,原因为MAP使用问题,请看我另一篇[MAP分析][MAP分析]
 
 
