@@ -1,6 +1,7 @@
 今天我们分析的是ThreadLocal这个类（JDK1.8中。安卓中对这个类进行了改写，方法和原理都差不多，但是具体实现上有区别，对数据存储以及获取的方式进行了更改）
 
-```/**
+```
+/**
 * Implements a thread-local storage, that is, a variable for which each thread
 * has its own value. All threads share the same {@codeThreadLocal} object,
 * but each sees a different value when accessing it, and changes made by one
@@ -233,22 +234,8 @@ public class Test {
 ![](https://github.com/AerialLadder/StudyNotes/blob/master/PIC/2017_9_21_2.png?raw=true)  
 这个方法在主线程如果没有调用test.set()方法会报出一个空指针异常的的错误,经过分析,原因为MAP使用问题,请看我另一篇[MAP分析][MAP分析]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+本文部分内容参考[Java并发编程：深入剖析ThreadLocal][Java并发编程：深入剖析ThreadLocal]
 
 
 [MAP分析]:
+[Java并发编程：深入剖析ThreadLocal]:http://www.cnblogs.com/dolphin0520/p/3920407.html
