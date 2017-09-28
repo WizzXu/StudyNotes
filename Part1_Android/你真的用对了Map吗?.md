@@ -146,7 +146,7 @@ map.getOrDefault(key,defaultt);
             : defaultValue;
     }
 ```
-实现原理差不多,次方法在JDK1.8中才有.
+实现原理差不多,此方法在JDK1.8中才有.
 
 
 [自动装箱拆箱机制]:http://blog.csdn.net/hp910315/article/details/48654777
