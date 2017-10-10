@@ -18,7 +18,6 @@
 
 我们先来看一下ThreadLocal类中的方法：
 ![](https://github.com/AerialLadder/StudyNotes/blob/master/PIC/2017_9_21_1.jpg?raw=true)
-
 其中有四个很重要的方法：
 > * public void set(T value)设置当前线程的线程局部变量的值。
 > * public T get()该方法返回当前线程所对应的线程局部变量。
