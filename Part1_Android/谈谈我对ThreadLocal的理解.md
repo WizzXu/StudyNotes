@@ -45,7 +45,7 @@
         else
             createMap(t, value);
     }
-```  
+```
 
 在这个方法内部我们看到，首先通过getMap(Thread t)方法获取一个和当前线程相关的ThreadLocalMap，然后将变量的值设置到这个ThreadLocalMap对象中，当然如果获取到的ThreadLocalMap对象为空，就通过createMap方法创建。
 
@@ -91,7 +91,7 @@
         }
         return setInitialValue();
     }
-```  
+```
 
 第一句是取得当前线程，然后通过getMap(t)方法获取到一个map，map的类型为ThreadLocalMap。然后接着下面获取到<key,value>键值对,<font color=#DC143C>注意这里获取键值对传进去的是this，而不是当前线程t</font>。
 如果获取成功，则返回value值。
@@ -108,7 +108,7 @@
     ThreadLocalMap getMap(Thread t) {
         return t.threadLocals;
     }
-```  
+```
 在getMap中，是调用当期线程t，返回当前线程t中的一个成员变量threadLocals。
 那么我们继续取Thread类中取看一下成员变量threadLocals是什么：
 ```
@@ -184,13 +184,13 @@
 ```
 至此，可能大部分朋友已经明白了ThreadLocal是如何为每个线程创建变量的副本的：
 首先，在每个线程Thread内部有一个ThreadLocal.ThreadLocalMap类型的成员变量threadLocals，这个threadLocals就是用来存储实际的变量副本的，键值为当前ThreadLocal变量，value为变量副本（即T类型的变量）。
-初始时，在Thread里面，threadLocals为空，当通过ThreadLocal变量调用get()方法或者set()方法，就会对Thread类中的threadLocals进行初始化，并且以当前ThreadLocal变量为键值，以ThreadLocal要保存的副本变量为value，存到threadLocals。  
+初始时，在Thread里面，threadLocals为空，当通过ThreadLocal变量调用get()方法或者set()方法，就会对Thread类中的threadLocals进行初始化，并且以当前ThreadLocal变量为键值，以ThreadLocal要保存的副本变量为value，存到threadLocals。
 
 然后在当前线程里面，如果要使用副本变量，就可以通过get方法在threadLocals里面查找。
 
 ```
 public class Test {
-	ThreadLocal<Long> longLocal = new ThreadLocal<Long>();
+    ThreadLocal<Long> longLocal = new ThreadLocal<Long>();
 	ThreadLocal<String> stringLocal = new ThreadLocal<String>();
 
 	public void set() {
