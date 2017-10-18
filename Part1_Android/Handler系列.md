@@ -168,7 +168,48 @@ public void handleMessage(Message msg) {}
 说明一点，Handler的使用过程中注意内存泄露问题！
 内容补充：[http://www.jianshu.com/p/338cce832cc9]
 
+Handler改进：
+> * 内存方面：使用静态内部类创建 handler 对象，且对 Activity 持有弱引用
+> * 异常方面：不加 try catch，而是在 onDestory 中把消息队列 MessageQueue 中的消息给 remove 掉。
+```
+    /**
+     为避免handler造成的内存泄漏
+     1、使用静态的handler，对外部类不保持对象的引用
+     2、但Handler需要与Activity通信，所以需要增加一个对Activity的弱引用
+    */
+      private static class MyHandler extends Handler {
+        private final WeakReference<Activity> mActivityReference;
+
+        MyHandler(Activity activity) {
+            this.mActivityReference = new WeakReference<Activity>(activity);
+        }
+
+        @Override
+            public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            MainActivity activity = (MainActivity) mActivityReference.get();  //获取弱引用队列中的activity
+            switch (msg.what) {    //获取消息，更新UI
+                case 1:
+                    byte[] data = (byte[]) msg.obj;
+                    activity.threadIv.setImageBitmap(activity.getBitmap(data));
+                    break;
+            }
+        }
+    }
+
+```
+并在 onDesotry 中销毁：
+```
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+    //避免activity销毁时，messageQueue中的消息未处理完；故此时应把对应的message给清除出队列
+    handler.removeCallbacks(postRunnable);   //清除runnable对应的message
+    //handler.removeMessage(what)  清除what对应的message
+}
+```
 ## HandlerThread
+
 这部分内容比较简单，HandlerThread将loop转到子线程中处理，说白了就是将分担
 MainLooper的工作量。
 内容补充：[http://www.jianshu.com/p/35c8567419fa]
