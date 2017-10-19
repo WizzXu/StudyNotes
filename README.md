@@ -9,3 +9,5 @@
 4.[Java中内存优化的SoftReference 和 WeakReference浅析(2017.10.17转)](http://www.jianshu.com/p/b56731447179)
 
 5.[Application和四大组件一些方法的启动顺序和一些坑(2017.10.18)](https://github.com/AerialLadder/StudyNotes/blob/master/Part1_Android/Application%E5%92%8C%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F%E5%92%8C%E4%B8%80%E4%BA%9B%E5%9D%91.md)
+
+6.[Context详解(2017.10.19转)](http://blog.csdn.net/qinjuning/article/details/7310620)
