@@ -13,3 +13,5 @@
 6.[Context详解(2017.10.19转)](http://blog.csdn.net/qinjuning/article/details/7310620)
 
 7.[Java 如何有效地避免OOM：善于利用软引用和弱引用](http://www.cnblogs.com/dolphin0520/p/3784171.html)
+
+8.[ThreadPoolExecutor 源码剖析(2017.12.22转)](https://github.com/c-rainstorm/blog/blob/master/java/ThreadPoolExecutor%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90.md)
