@@ -6,5 +6,8 @@
 2. 通配符  
 3. 擦除  
 4. 上下边界  
-这部分学习完了突然感觉有点理解RxJava了。
+这部分学习完了突然感觉有点理解RxJava了。  
+#### 2.注解
+##### demo
+1. 自定义注解 [秒懂，Java 注解 （Annotation）你可以这样学](https://blog.csdn.net/briblue/article/details/73824058)
 
